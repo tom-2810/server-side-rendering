@@ -1,72 +1,23 @@
 <nav id="side-nav">
     <h2><span class="accent-magenta">Snel naar.</span> En progressie</h2>
     <ol>
-        <li>
-            <a class="principe-link" href="#waarneembaar">
+        <% principes.forEach(principe => { %>
+            <li>
+            <a class="principe-link" href="#<%= principe.titel.toLowerCase() %>">
                 <section class="content">
-                    <img src="/images/svg/waarneembaar-icon.svg" alt="">
+                    <img src="/images/svg/<%= principe.titel.toLowerCase() %>-icon.svg" alt="">
                     <section class="principe-titel">
-                        <h3 class="accent-magenta">Waarneembaar</h3>
-                        <h4>Principe 1</h4>
+                        <h3 class="accent-magenta"><%= principe.titel %></h3>
+                        <h4>Principe <%= principe.index %></h4>
                     </section>
                 </section>
 
                 <section class="principe-progressie">
-                    <progress id="waarneembaar-progressie-balk" value="0" max="4"></progress>
-                    <p><span id="waarneembaar-progressie">0</span> van de 4</p>
+                    <progress id="<%= principe.titel.toLowerCase() %>-progressie-balk" value="0" max="<%= principe.richtlijnen.length %>"></progress>
+                    <p><span id="<%= principe.titel.toLowerCase() %>-progressie">0</span> van de <%= principe.richtlijnen.length %></p>
                 </section>
             </a>
         </li>
-
-        <li>
-            <a class="principe-link" href="#bedienbaar">
-                <section class="content">
-                    <img src="/images/svg/bedienbaar-icon.svg" alt="">
-                    <section class="principe-titel">
-                        <h3 class="accent-magenta">Bedienbaar</h3>
-                        <h4>Principe 2</h4>
-                    </section>
-                </section>
-
-                <section class="principe-progressie">
-                    <progress id="bedienbaar-progressie-balk" value="0" max="5"></progress>
-                    <p><span id="bedienbaar-progressie">0</span> van de 5</p>
-                </section>
-            </a>
-        </li>
-
-        <li>
-            <a class="principe-link" href="#begrijpelijk">
-                <section class="content">
-                    <img src="/images/svg/begrijpelijk-icon.svg" alt="">
-                    <section class="principe-titel">
-                        <h3 class="accent-magenta">Begrijpelijk</h3>
-                        <h4>Principe 3</h4>
-                    </section>
-                </section>
-
-                <section class="principe-progressie">
-                    <progress id="begrijpelijk-progressie-balk" value="0" max="3"></progress>
-                    <p><span id="begrijpelijk-progressie">0</span> van de 3</p>
-                </section>
-            </a>
-        </li>
-
-        <li>
-            <a class="principe-link" href="#robuust">
-                <section class="content">
-                    <img src="/images/svg/robuust-icon.svg" alt="">
-                    <section class="principe-titel">
-                        <h3 class="accent-magenta">Robuust</h3>
-                        <h4>Principe 4</h4>
-                    </section>
-                </section>
-
-                <section class="principe-progressie">
-                    <progress id="robuust-progressie-balk" value="0" max="1"></progress>
-                    <p><span id="robuust-progressie">0</span> van de 1</p>
-                </section>
-            </a>
-        </li>
+        <% }) %>
     </ol>
 </nav>
