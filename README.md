@@ -1,7 +1,7 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# Toolgankelijk
+Tool in checklist vorm om website toegankelijker te maken.
 
 ## Inhoudsopgave
 
@@ -9,22 +9,26 @@
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
   * [Gebruik](#gebruik)
-  * [Bronnen](#bronnen)
   * [Licentie](#licentie)
+  <!-- * [Bronnen](#bronnen) -->
+ 
 
 ## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+Samen met deze toegankelijkheids-tool maakt u eenvouding websites en apps toegankelijker via een checklist, geleidt door de WCAG principes en richtlijnen.
+![image](https://user-images.githubusercontent.com/112861614/224163551-9211776c-cad6-4b1f-9b2f-6dccf351b54e.png)
+Live link gehost via Cyclic: https://puce-sleepy-gecko.cyclic.app/ 
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+Het Toolboard is tot stand gekomen met ejs en Node.
+Door middel van een nested forEach-loop worden alle richtlijnen per principe uit de [Vervoerregio Amsterdam API](https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principles) gehaald.
 
 ## Installatie
+Fork het project en voer eerst `npm install` uit in de terminal om alle nodige packages en dependencies binnen te halen. Vervolgens maakt `npm start` een port vrij om de website te bekijken in de browser.
 
 ## Gebruik
+Werk met deze checklist de toegankelijkheidsrichtlijnen af per principe om een website stap voor stap te beoordelen. Vervolgens kan je aan de hand van de onvoltooide principes verbeteringen aanbrengen aan de bijbehorende website.
 
-## Bronnen
+<!-- ## Bronnen -->
 
 ## Licentie
 
