@@ -1,0 +1,668 @@
+html {
+    scroll-behavior: smooth;
+    font-family: Fira Sans Medium;
+}
+
+@import url(../assets/fonts/FiraSans-Medium.ttf);
+@import url(../assets/fonts/FiraSans-Regular.ttf);
+
+@font-face {
+    font-family: "Fira Sans Medium";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/fonts/FiraSans-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Fira Sans Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/fonts/FiraSans-Regular.ttf) format("truetype");
+}
+
+
+:root {
+    --default-width: 85vw;
+    --max-width: 95rem;
+    --small-size: .5rem;
+    --medium-size: 1.2rem;
+    --large-size: 1.7rem;
+    --xlarge-size: 3rem;
+    --xxlarge-size: 8rem;
+    --small-radius: 8px;
+    --medium-radius: 16px;
+    --large-radius: 32px;
+    --c-achtergrond: #f5f5f5;
+    --c-header-achtergrond: #ffffff;
+    --c-schaduw: 0px 0px 40px rgba(0, 0, 0, 0.025);
+    --c-schaduw-hover: 0px 0px 40px rgba(0, 0, 0, 0.075);
+    --c-tekst: rgb(70, 70, 70);
+    --c-huistijl-magenta: linear-gradient(123.52deg, var(--c-huisstijl-magenta-plain) 0%, #ff158e 100%);
+    --c-huisstijl-magenta-plain: #eb004e;
+    --logo: url(/images/svg/vervoerregio_amsterdam_logo.svg);
+}
+
+[data-theme="dark"] {
+    --c-achtergrond: #161616;
+    --c-header-achtergrond: #272727;
+    --c-tekst: #ffffff;
+    --c-huisstijl-magenta-plain: #ff0055;
+    --logo: url(/images/svg/vervoerregio_amsterdam_logo_darkmode.svg);
+}
+
+* {
+    scroll-margin: 23rem;
+    margin: 0;
+    padding: 0;
+    color: var(--c-tekst);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: var(--c-achtergrond);
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--c-header-achtergrond);
+    z-index: 2;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-size);
+    width: var(--default-width);
+    max-width: var(--max-width);
+    margin: 20vh 0;
+}
+
+header #vra-logo {
+    content: var(--logo);
+    width: 18rem;
+    height: auto;
+}
+
+header #navigation {
+    display: flex;
+    align-items: center;
+    max-width: var(--max-width);
+    width: var(--default-width);
+    gap: var(--medium-size);
+    padding: var(--medium-size) 0;
+    font-size: 18px;
+}
+
+header #top-nav {
+    display: flex;
+    gap: var(--medium-size);
+    width: 100%;
+}
+
+header #top-nav a {
+    text-decoration: none;
+}
+
+header #top-nav :is(a, li, label) {
+    display: flex;
+    align-items: center;
+    gap: var(--small-size);
+}
+
+header #top-nav :is(a, li, label):hover {
+    cursor: pointer;
+    color: var(--c-huisstijl-magenta-plain);
+    text-shadow: var(--c-schaduw-hover);
+}
+
+header #top-nav :is(a, li, label):hover path {
+    fill: var(--c-huisstijl-magenta-plain);
+}
+
+header #top-nav #inhoud {
+    margin-right: auto
+}
+
+header #top-nav #thema {
+    display: flex;
+    align-items: center;
+    gap: var(--small-size);
+}
+
+header #top-nav ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    gap: var(--medium-size);
+}
+
+.secondaire-knoppen {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: .8vw;
+    bottom: 6vh;
+    gap: var(--small-size);
+}
+
+.secondaire-knoppen section {
+    display: grid;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    padding: var(--small-size);
+    background-image: var(--c-huistijl-magenta);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.secondaire-knoppen a {
+    height: fit-content;
+    width: auto;
+    border-radius: 50%;
+}
+
+.secondaire-knoppen #top-button {
+    display: none;
+}
+
+.secondaire-knoppen svg {
+    height: 2rem;
+    width: auto;
+}
+
+.mobiel-zichtbaar {
+    display: none;
+}
+
+.open {
+    transform: translateY(0) !important;
+}
+
+.active, .active path {
+    color: var(--c-huisstijl-magenta-plain);
+    fill: var(--c-huisstijl-magenta-plain);
+    text-shadow: var(--c-schaduw-hover);
+}
+
+.stop-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+#navigation button {
+    background: transparent;
+    border: none;
+}
+
+#hamburger-icon {
+
+    display: none;
+    height: fit-content;
+    width: fit-content;
+}
+
+#hamburger-icon .line {
+    transition: 
+    y 200ms ease-in 200ms,
+    rotate 200ms ease-in,
+    opacity 0ms 200ms,
+    fill 200ms;
+    transform-origin: center;
+}
+
+#hamburger-icon[aria-expanded="true"] .line {
+    transition: 
+    y 200ms ease-in,
+    rotate 200ms ease-in 200ms,
+    opacity 0ms 200ms,
+    fill 200ms;
+    fill: var(--c-huisstijl-magenta-plain);
+}
+
+#hamburger-icon[aria-expanded="true"] :is(.top, .bottom) {
+    y: 45px;
+}
+
+#hamburger-icon[aria-expanded="true"] .top {
+    rotate: 45deg;
+}
+
+#hamburger-icon[aria-expanded="true"] .middle {
+    opacity: 0;
+}
+
+#hamburger-icon[aria-expanded="true"] .bottom {
+    rotate: -45deg;
+}
+
+.accent-magenta {
+    background: var(--c-huistijl-magenta);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* START codepen switch */
+
+.switch {
+    display: inline-block;
+    height: var(--large-size);
+    position: relative;
+    width: 4rem;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    background-color: rgb(97, 205, 255);
+    border: 2px solid var(--c-tekst);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.slider:before {
+    background-color: rgb(255, 217, 0);
+    bottom: 2px;
+    content: "";
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    transition: .5s;
+    width: 20px;
+    box-shadow: 0px 0px 12px 12px rgba(255, 255, 255, .8)
+}
+
+input:checked+.slider {
+    background-color: var(--c-achtergrond);
+}
+
+input:checked+.slider:before {
+    transform: translateX(35px);
+    background-color: rgb(255, 255, 255);
+
+    box-shadow: 0px 0px 12px 12px rgba(255, 255, 255, .8)
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* END codepen switch */
+
+
+
+#welkom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+    max-height: 60rem;
+    align-items: center;
+    gap: var(--large-size);
+    margin-bottom: 15vh;
+}
+
+#introductie {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+    max-width: 85%;
+    margin-bottom: 20%;
+}
+
+#slogan {
+    font-size: var(--xlarge-size);
+    width: 35rem;
+}
+
+#toelichting {
+    font-size: var(--xlarge-size);
+    width: 60%;
+}
+
+#inleiding {
+    font-size: var(--large-size);
+    width: 80%;
+}
+
+#welkom img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    grid-column: 2 / 4;
+    grid-row: 1 / 1;
+    margin-left: auto;
+    margin-bottom: 20%;
+}
+
+.knoppen {
+    display: flex;
+    gap: var(--medium-size);
+    grid-column: 1/ 3;
+    grid-row: 2/ 3;
+    margin: var(--large-size) 0;
+}
+
+.knop {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: var(--small-size) var(--large-size);
+    border-radius: var(--small-radius);
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 2rem;
+}
+
+.knop:hover {
+    transform: scale(1.01);
+    box-shadow: var(--c-schaduw-hover);
+}
+
+.primair {
+    background: var(--c-huistijl-magenta);
+}
+
+.secundair {
+    color: var(--c-huisstijl-magenta-plain);
+    border: 1px solid var(--c-huisstijl-magenta-plain);
+}
+
+#uitleg {
+    display: grid;
+    width: 100%;
+    max-width: 60rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--large-size);
+}
+
+.item {
+    aspect-ratio: 1/1;
+    background-color: var(--c-header-achtergrond);
+    border-radius: var(--large-radius);
+    box-shadow: var(--c-schaduw);
+    transition: transform 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: var(--medium-size);
+    padding: var(--large-size);
+}
+
+.item h3,
+.item p {
+    font-size: var(--large-size);
+}
+
+.item:hover {
+    box-shadow: var(--c-schaduw-hover);
+    transform: scale(1.005);
+}
+
+.item img {
+    width: 75%;
+    margin-inline: auto;
+    flex: 1 1 auto;
+    object-fit: contain;
+}
+
+.tekstueel-deel {
+    flex: 1 1 auto;
+}
+
+.tekstueel-deel p {
+    font-size: var(--medium-size);
+}
+
+#toolgankelijk {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: span 2;
+    aspect-ratio: initial;
+}
+
+#toolgankelijk ol {
+    font-size: var(--medium-size);
+    list-style: inside;
+    list-style-type: decimal;
+}
+
+#toolgankelijk img {
+    margin: auto;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1650px) {
+    #uitleg {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #toolgankelijk img {
+        height: 25rem;
+    }
+
+    .item h3,
+    .item p {
+        font-size: var(--medium-size);
+    }
+
+    header #vra-logo {
+        width: 11rem;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    main {
+        justify-content: flex-start;
+        width: 93vw;
+        margin: calc(var(--xxlarge-size) + var(--medium-size)) 0;
+    }
+
+    #uitleg {
+        width: 100%;
+    }
+
+    #welkom {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: var(--large-size);
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        align-items: flex-start;
+    }
+
+    header #vra-logo {
+        width: 14rem;
+        height: auto;
+    }
+
+    header #navigation {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: var(--medium-size);
+        width: 93vw;
+    }
+
+    #introductie {
+        max-width: 100%;
+    }
+
+    #welkom img {
+        grid-column: 1;
+        grid-row: 1;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #slogan {
+        font-size: var(--xlarge-size);
+        width: 100%;
+    }
+
+    .knoppen {
+        gap: var(--medium-size);
+    }
+
+    .knop {
+        font-size: var(--medium-size);
+    }
+
+    #uitleg {
+        grid-template-columns: 1fr;
+    }
+
+    .item {
+        aspect-ratio: initial;
+        gap: .5rem;
+    }
+
+    .item img {
+        width: 90%;
+        height: fit-content;
+    }
+
+    #toolgankelijk {
+        display: flex;
+        flex-direction: column;
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    #toolgankelijk img {
+        margin: 0;
+        width: 100%;
+    }
+
+    #inleiding {
+        font-size: var(--medium-size);
+        width: 100%;
+    }
+
+    #toelichting {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+    :root {
+        --xlarge-size: 2.4rem;
+    }
+
+    main {
+        margin: var(--xxlarge-size) 0;
+    }
+
+    #toelichting {
+        width: 90%;
+    }
+
+    #introductie {
+        margin-bottom: var(--xxlarge-size);
+    }
+
+    header #navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: var(--c-header-achtergrond);
+        justify-content: space-between;
+    }
+
+    .mobiel-zichtbaar {
+        display: block;
+    }
+
+    .desktop-zichtbaar {
+        display: none;
+    }
+
+    header #top-nav section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small-size);
+    }
+
+    header #top-nav section ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small-size);
+        padding: 0 var(--medium-size);
+    }
+
+    header #top-nav {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        display: flex;
+        gap: var(--large-size);
+        flex-direction: column;
+        height: 100vh;
+        background-color: var(--c-header-achtergrond);
+        font-size: var(--medium-size);
+        padding: var(--xlarge-size) 0;
+        transform: translateY(-100%);
+        transition: transform .7s;
+        z-index: -1;
+    }
+
+    #top-nav h2 {
+        font-family: Fira Sans Regular;
+        position: relative;
+        color: var(--c-tekst);
+        font-weight: lighter;
+        margin: 0 var(--medium-size);
+        font-size: .9rem;
+    }
+
+    #top-nav h2:before {
+        content: "";
+        position: absolute;
+        bottom: 0rem;
+        height: 1px;
+        background-color: var(--c-tekst);
+        width: 100%;
+    }
+
+    header #top-nav #inhoud {
+        margin: 0;
+    }
+
+    #top-nav li {
+        font-weight: 500;
+        font-size: var(--large-size);
+    }
+
+    header #vra-logo {
+        width: 12rem;
+        height: auto;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+
+}

@@ -1,0 +1,268 @@
+* {
+    scroll-margin: 11rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: 20rem 1fr; */
+    margin: calc(var(--xxlarge-size) + var(--small-size)) 0;
+}
+
+progress {
+    accent-color: var(--c-huisstijl-magenta-plain);
+}
+
+#toolboard-titel {
+    grid-column: 1 / 5;
+    grid-row: 1 / 1;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    padding: var(--large-size) var(--xlarge-size);
+    background-color: var(--c-header-achtergrond);
+    align-items: center;
+    background-image: url(../content/images/svg/toolboard-check.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: var(--large-size);
+    border-radius: var(--large-radius);
+    font-size: var(--xlarge-size);
+    box-shadow: var(--c-schaduw);
+}
+
+#principes {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 3;
+    gap: var(--medium-size);
+    max-width: 55rem;
+}
+
+.principe {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-size);
+}
+
+.richtlijnen {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    border-radius: var(--medium-radius);
+    background-color: var(--c-header-achtergrond);
+    padding: var(--medium-size);
+    box-shadow: var(--c-schaduw);
+}
+
+.richtlijnen details:first-child {
+    border-radius: var(--small-size) var(--small-size) 0 0;
+}
+
+.richtlijnen details:last-child {
+    border-radius: 0 0 var(--small-size) var(--small-size);
+}
+
+.richtlijnen details {
+    padding: var(--medium-size);
+    background-color: var(--c-achtergrond);
+}
+
+.richtlijnen details * {
+    margin: var(--small-size) 0 var(--small-size) 0;
+    list-style-position: inside;
+}
+
+details::marker {
+    display: none;
+}
+
+.richtlijnen summary {
+    display: flex;
+    margin: calc(-1 * var(--medium-size));
+    padding: var(--medium-size);
+    gap: var(--medium-size);
+    align-items: center;
+    cursor: pointer;
+}
+
+.richtlijnen summary label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.richtlijnen summary label svg {
+    position: absolute;
+    height: var(--medium-size);
+    width: var(--medium-size);
+}
+
+.richtlijnen summary label svg path {
+    fill: var(--c-achtergrond);
+    pointer-events: none;
+}
+
+.richtlijnen summary input {
+    width: var(--large-size);
+    height: var(--large-size);
+    border: 4px solid var(--c-huisstijl-magenta-plain);
+    border-radius: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: .2s;
+
+}
+
+.richtlijnen summary input:checked {
+    box-shadow: inset 0 0 0 20px var(--c-huisstijl-magenta-plain);
+}
+
+.richtlijnen summary svg.arrow {
+    height: fit-content;
+    transform: rotate(90deg);
+    font-size: var(--medium-size);
+    transition: .2s;
+}
+
+.richtlijnen details summary svg.arrow path {
+    fill: var(--c-tekst);
+}
+
+.richtlijnen details[open] summary svg.arrow {
+    transform: rotate(180deg);
+    transition: .2s;
+}
+
+.richtlijnen details[open] summary svg.arrow path {
+    fill: var(--c-huisstijl-magenta-plain);
+    transition: .2s;
+}
+
+.inleiding {
+    background-color: var(--c-header-achtergrond);
+    border-radius: var(--medium-radius);
+    padding: var(--medium-size);
+    box-shadow: var(--c-schaduw);
+}
+
+#side-nav {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 7rem;
+    min-width: 18rem;
+    gap: var(--medium-size);
+    height: fit-content;
+}
+
+#side-nav ol {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-size);
+    list-style: none;
+}
+
+#side-nav ol li {
+    background-color: var(--c-header-achtergrond);
+    border-radius: var(--medium-radius);
+    padding: var(--small-size) var(--medium-size);
+    transition: transform .5s;
+    box-shadow: var(--c-schaduw);
+}
+
+#side-nav ol li:hover {
+    box-shadow: var(--c-schaduw-hover);
+    transform: scale(1.01);
+}
+
+#side-nav ol li a {
+    text-decoration: none;
+    color: black;
+}
+
+.principe-link .content {
+    display: flex;
+    align-items: center;
+    gap: var(--small-size);
+}
+
+.principe-link .content img {
+    width: var(--xlarge-size);
+    object-fit: contain;
+    transition: 1s;
+}
+
+.principe-titel {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.principe-progressie {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--small-size);
+    align-items: center;
+}
+
+.principe-progressie progress {
+    width: 100%;
+}
+
+.principe-progressie p {
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 900px) {
+    main {
+        display: flex;
+        margin-top: calc(var(--xxlarge-size) + var(--small-size));
+    }
+
+    #toolboard-titel {
+        order: 1;
+        background-position: bottom;
+        background-position-y: 8rem;
+        background-position-x: 67%;
+        background-size: 10rem;
+        height: 18rem;
+        font-size: var(--medium-size);
+        align-items: initial;
+        justify-content: center;
+        text-align: center;
+        padding: var(--large-size);
+    }
+
+    #side-nav {
+        position: relative;
+        top: 0;
+        order: 2;
+        width: 100%;
+    }
+
+    #principes {
+        order: 3;
+        max-width: 100%;
+    }
+
+    .richtlijnen summary {
+        gap: .5rem;
+    }
+
+    .richtlijnen details h3 {
+        font-size: 1.04rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    main {
+        display: flex;
+        margin-top: calc(var(--xxlarge-size) - var(--medium-size));
+    }
+}
