@@ -3,6 +3,7 @@
 # ⚙️ Toolgankelijk
 Tool in checklist vorm om website toegankelijker te maken.
 
+<!--
 ## 📃 Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
@@ -10,8 +11,8 @@ Tool in checklist vorm om website toegankelijker te maken.
   * [Installatie](#installatie)
   * [Gebruik](#gebruik)
   * [Licentie](#licentie)
-  <!-- * [Bronnen](#bronnen) -->
- 
+  * [Bronnen](#bronnen)
+ -->
 
 ## 🤔 Beschrijving
 Samen met deze toegankelijkheids-tool maakt u eenvouding websites en apps toegankelijker via een checklist, geleidt door de WCAG principes en richtlijnen.
