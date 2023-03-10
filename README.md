@@ -5,7 +5,7 @@ Tool in checklist vorm om website toegankelijker te maken.
 
 ## 📃 Inhoudsopgave
 
-  * [Beschrijving](##🤔Beschrijving)
+  * [Beschrijving](#beschrijving)
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
   * [Gebruik](#gebruik)
@@ -13,7 +13,7 @@ Tool in checklist vorm om website toegankelijker te maken.
   <!-- * [Bronnen](#bronnen) -->
  
 
-## 🤔Beschrijving
+## 🤔 Beschrijving
 Samen met deze toegankelijkheids-tool maakt u eenvouding websites en apps toegankelijker via een checklist, geleidt door de WCAG principes en richtlijnen.
 ![image](https://user-images.githubusercontent.com/112861614/224163551-9211776c-cad6-4b1f-9b2f-6dccf351b54e.png)
 Live link gehost via Cyclic: https://puce-sleepy-gecko.cyclic.app/ 
