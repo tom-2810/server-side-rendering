@@ -5,7 +5,7 @@ Tool in checklist vorm om website toegankelijker te maken.
 
 ## 📃 Inhoudsopgave
 
-  * [Beschrijving](#beschrijving)
+  * [Beschrijving](#🤔 Beschrijving)
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
   * [Gebruik](#gebruik)
