@@ -3,21 +3,21 @@ html {
     font-family: Fira Sans Medium;
 }
 
-@import url(../assets/fonts/FiraSans-Medium.ttf);
-@import url(../assets/fonts/FiraSans-Regular.ttf);
+@import url(/fonts/FiraSans-Medium.ttf);
+@import url(/fonts/FiraSans-Regular.ttf);
 
 @font-face {
     font-family: "Fira Sans Medium";
     font-style: normal;
     font-weight: normal;
-    src: url(../assets/fonts/FiraSans-Medium.ttf) format("truetype");
+    src: url(/fonts/FiraSans-Medium.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Fira Sans Regular";
     font-style: normal;
     font-weight: normal;
-    src: url(../assets/fonts/FiraSans-Regular.ttf) format("truetype");
+    src: url(/fonts/FiraSans-Regular.ttf) format("truetype");
 }
 
 
