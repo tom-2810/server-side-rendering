@@ -1,6 +1,6 @@
 import express, { request } from 'express'
 
-const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principles'
+const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principes'
 
 // Maak een nieuwe express app
 const app = express()
