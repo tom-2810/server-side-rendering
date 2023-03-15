@@ -89,6 +89,11 @@ details::marker {
     cursor: pointer;
 }
 
+.richtlijnen summary .status {
+    display: flex;
+    margin-left: auto;
+}
+
 .richtlijnen summary label {
     display: flex;
     align-items: center;
@@ -135,14 +140,28 @@ details::marker {
     fill: var(--c-tekst);
 }
 
-.richtlijnen details[open] summary svg.arrow {
+.richtlijnen details[open] > summary svg.arrow {
     transform: rotate(180deg);
     transition: .2s;
 }
 
-.richtlijnen details[open] summary svg.arrow path {
+.richtlijnen details[open] > summary svg.arrow path {
     fill: var(--c-huisstijl-magenta-plain);
     transition: .2s;
+}
+
+.succescriteria {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 2px;
+    padding-top: 2px;
+
+}
+
+.succescriteria details {
+    border-radius: 0 !important;
+    margin: 0;
 }
 
 .inleiding {

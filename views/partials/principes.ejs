@@ -5,37 +5,63 @@
 <section id="principes">
     <h2><span class="accent-magenta">Principes. </span>En richtlijnen</h2>
 
-    <% principes.forEach(principe => { %>
-<article class="principe" id="<%= principe.titel.toLowerCase() %>">
-        <section class="inleiding">
-            <h2><span class="accent-magenta"><%= principe.titel %>. </span>Principe <%= principe.index %></h2>
-            <%- principe.beschrijving.html %>
-        </section>
-        <section class="richtlijnen">
-            <% principe.richtlijnen.forEach(richtlijn => { %>
-                <details>
-                    <summary>
-                        <svg class="arrow" width="12" height="7" viewBox="0 0 12 7" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M0.700048 6.69999C0.516715 6.51665 0.425049 6.28332 0.425049 5.99999C0.425049 5.71665 0.516715 5.48332 0.700048 5.29999L5.30005 0.699987C5.40005 0.599987 5.50838 0.528988 5.62505 0.486988C5.74172 0.445655 5.86672 0.424988 6.00005 0.424988C6.13338 0.424988 6.26271 0.449988 6.38805 0.499988C6.51271 0.549988 6.61672 0.616654 6.70005 0.699987L11.3 5.29999C11.4834 5.48332 11.575 5.71665 11.575 5.99999C11.575 6.28332 11.4834 6.51665 11.3 6.69999C11.1167 6.88332 10.8834 6.97499 10.6 6.97499C10.3167 6.97499 10.0834 6.88332 9.90005 6.69999L6.00005 2.79999L2.10005 6.69999C1.91672 6.88332 1.68338 6.97499 1.40005 6.97499C1.11672 6.97499 0.883382 6.88332 0.700048 6.69999V6.69999Z"
-                                fill="black" />
-                        </svg>
-                        <h3>Richtlijn <%= richtlijn.index %><br><%= richtlijn.titel %></h3>
-                        <label aria-label="Richtlijn <%= richtlijn.index %> <%= richtlijn.titel %>">
-                            <input type="checkbox">
-                            <svg width="12" height="9" viewBox="0 0 12 9" fill="none"
+    <% principes.forEach(principe=> { %>
+        <article class="principe" id="<%= principe.titel.toLowerCase() %>">
+            <section class="inleiding">
+                <h3><span class="accent-magenta">
+                        <%= principe.titel %>.
+                    </span>Principe <%= principe.index %>
+                </h3>
+                <%- principe.beschrijving.html %>
+            </section>
+            <section class="richtlijnen">
+                <% principe.richtlijnen.forEach(richtlijn=> { %>
+                    <details>
+                        <summary>
+                            <svg class="arrow" width="12" height="7" viewBox="0 0 12 7" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                    d="M4.00005 6.60005L9.90005 0.700048C10.0834 0.516715 10.3167 0.425049 10.6 0.425049C10.8834 0.425049 11.1167 0.516715 11.3 0.700048C11.4834 0.883382 11.575 1.11671 11.575 1.40005C11.575 1.68338 11.4834 1.91672 11.3 2.10005L4.70005 8.70005C4.50005 8.90005 4.26672 9.00005 4.00005 9.00005C3.73338 9.00005 3.50005 8.90005 3.30005 8.70005L0.700048 6.10005C0.516715 5.91672 0.425049 5.68338 0.425049 5.40005C0.425049 5.11671 0.516715 4.88338 0.700048 4.70005C0.883382 4.51672 1.11672 4.42505 1.40005 4.42505C1.68338 4.42505 1.91672 4.51672 2.10005 4.70005L4.00005 6.60005Z"
-                                    fill="none" />
+                                    d="M0.700048 6.69999C0.516715 6.51665 0.425049 6.28332 0.425049 5.99999C0.425049 5.71665 0.516715 5.48332 0.700048 5.29999L5.30005 0.699987C5.40005 0.599987 5.50838 0.528988 5.62505 0.486988C5.74172 0.445655 5.86672 0.424988 6.00005 0.424988C6.13338 0.424988 6.26271 0.449988 6.38805 0.499988C6.51271 0.549988 6.61672 0.616654 6.70005 0.699987L11.3 5.29999C11.4834 5.48332 11.575 5.71665 11.575 5.99999C11.575 6.28332 11.4834 6.51665 11.3 6.69999C11.1167 6.88332 10.8834 6.97499 10.6 6.97499C10.3167 6.97499 10.0834 6.88332 9.90005 6.69999L6.00005 2.79999L2.10005 6.69999C1.91672 6.88332 1.68338 6.97499 1.40005 6.97499C1.11672 6.97499 0.883382 6.88332 0.700048 6.69999V6.69999Z"
+                                    fill="black" />
                             </svg>
-                        </label>
-                    </summary>
-                    <%- richtlijn.uitleg.html %>
-                </details>
-            <% }) %>
-        </section>
-    </article>
-    <% }) %>
+                            <h4>Richtlijn <%= richtlijn.index %><br>
+                                    <%= richtlijn.titel %>
+                            </h4>
+                            <p class="status">onbewerkt</p>
+                        </summary>
+                        <%- richtlijn.uitleg.html %>
+                        <section class="succescriteria">
+                            <% richtlijn.succescriteria.forEach(succescriterium=> { %>
+                                <details>
+                                    <summary>
+                                        <svg class="arrow" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.700048 6.69999C0.516715 6.51665 0.425049 6.28332 0.425049 5.99999C0.425049 5.71665 0.516715 5.48332 0.700048 5.29999L5.30005 0.699987C5.40005 0.599987 5.50838 0.528988 5.62505 0.486988C5.74172 0.445655 5.86672 0.424988 6.00005 0.424988C6.13338 0.424988 6.26271 0.449988 6.38805 0.499988C6.51271 0.549988 6.61672 0.616654 6.70005 0.699987L11.3 5.29999C11.4834 5.48332 11.575 5.71665 11.575 5.99999C11.575 6.28332 11.4834 6.51665 11.3 6.69999C11.1167 6.88332 10.8834 6.97499 10.6 6.97499C10.3167 6.97499 10.0834 6.88332 9.90005 6.69999L6.00005 2.79999L2.10005 6.69999C1.91672 6.88332 1.68338 6.97499 1.40005 6.97499C1.11672 6.97499 0.883382 6.88332 0.700048 6.69999V6.69999Z"
+                                                fill="black" />
+                                        </svg>
+                                        <h5>
+                                            <%= `${succescriterium.index} ${succescriterium.titel} niveau ${succescriterium.niveau}` %>
+                                        </h5>
+
+                                        <label aria-label="Richtlijn <%= richtlijn.index %> <%= richtlijn.titel %>">
+                                            <input type="checkbox">
+                                            <svg width="12" height="9" viewBox="0 0 12 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.00005 6.60005L9.90005 0.700048C10.0834 0.516715 10.3167 0.425049 10.6 0.425049C10.8834 0.425049 11.1167 0.516715 11.3 0.700048C11.4834 0.883382 11.575 1.11671 11.575 1.40005C11.575 1.68338 11.4834 1.91672 11.3 2.10005L4.70005 8.70005C4.50005 8.90005 4.26672 9.00005 4.00005 9.00005C3.73338 9.00005 3.50005 8.90005 3.30005 8.70005L0.700048 6.10005C0.516715 5.91672 0.425049 5.68338 0.425049 5.40005C0.425049 5.11671 0.516715 4.88338 0.700048 4.70005C0.883382 4.51672 1.11672 4.42505 1.40005 4.42505C1.68338 4.42505 1.91672 4.51672 2.10005 4.70005L4.00005 6.60005Z"
+                                                    fill="none" />
+                                            </svg>
+                                        </label>
+                                    </summary>
+                                    <%= succescriterium.id %>
+                                </details>
+                                <% }) %>
+                        </section>
+                            
+                    </details>
+                    <% }) %>
+            </section>
+        </article>
+        <% }) %>
 </section>
