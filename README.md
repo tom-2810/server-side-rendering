@@ -3,6 +3,8 @@
 # ⚙️ Toolgankelijk
 Tool in checklist vorm om website toegankelijker te maken.
 
+![image](https://user-images.githubusercontent.com/112861614/225776803-49c18e73-4257-42db-ad5a-83c4e93b9f2f.png)
+
 <!--
 ## 📃 Inhoudsopgave
 
