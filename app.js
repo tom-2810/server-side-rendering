@@ -14,8 +14,21 @@ app.use(express.static('public'))
 // Maak een route voor de index
 app.get('/', (request, response) => {
   fetchJson(url).then((data) => {
-    console.log(data)
-    response.render('index', data)
+    response.render('index', {data: data, active: '/'})
+  })
+})
+
+// Route voor het toolboard
+app.get('/toolboard', function (request, response) {
+  fetchJson(url).then((data) => {
+  response.render('toolboard', {data: data, active: '/toolboard'})
+  })
+})
+
+// Route voor het toolboard
+app.get('/contact', function (request, response) {
+  fetchJson(url).then((data) => {
+  response.render('contact', {data: data, active: '/contact'})
   })
 })
 

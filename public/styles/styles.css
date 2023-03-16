@@ -75,12 +75,15 @@ header {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
     gap: var(--large-size);
     width: var(--default-width);
     max-width: var(--max-width);
     margin: 20vh 0;
+}
+
+main#home {
+    display: flex;
+    flex-direction: column;
 }
 
 header #vra-logo {

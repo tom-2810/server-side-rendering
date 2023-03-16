@@ -52,7 +52,7 @@ form button {
     padding: var(--large-size) var(--xlarge-size);
     background-color: var(--c-header-achtergrond);
     align-items: center;
-    background-image: url(../content/images/svg/mailbox.svg);
+    background-image: url(/images/svg/mailbox.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: 90%;

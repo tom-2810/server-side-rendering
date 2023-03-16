@@ -18,7 +18,7 @@
             <section id="inhoud">
                 <h2 class="mobiel-zichtbaar">Inhoud</h2>
                 <ul>
-                    <li><a href="/">
+                    <li><a <% if(active=="/" ) {%> class="active"<%}%> href="/">
                             <svg class="mobiel-zichtbaar" width="19" height="19" viewBox="0 0 19 19" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -26,7 +26,7 @@
                                     fill="#6E6E73" />
                             </svg>
                             Home</a></li>
-                    <li><a class="active" href="/html/toolboard.html">
+                    <li><a <% if(active=="/toolboard" ) {%> class="active"<%}%> href="/toolboard">
                             <svg class="mobiel-zichtbaar" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -34,7 +34,7 @@
                                     fill="#6E6E73" />
                             </svg>
                             Het Toolboard</a></li>
-                    <li><a href="/html/contact.html">
+                    <li><a <% if(active=="/contact" ) {%> class="active"<%}%> href="/contact">
                             <svg class="mobiel-zichtbaar" width="23" height="19" viewBox="0 0 23 19" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path

@@ -24,7 +24,7 @@ progress {
     padding: var(--large-size) var(--xlarge-size);
     background-color: var(--c-header-achtergrond);
     align-items: center;
-    background-image: url(../content/images/svg/toolboard-check.svg);
+    background-image: url(/images/svg/toolboard-check.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: 90%;
