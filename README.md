@@ -27,7 +27,7 @@ Door middel van een nested forEach-loop worden alle richtlijnen per principe uit
 Fork het project en voer eerst `npm install` uit in de terminal om alle nodige packages en dependencies binnen te halen. Vervolgens maakt `npm start` een port vrij om de website te bekijken in de browser.
 
 ## 🙃 Gebruik
-Werk met deze checklist de toegankelijkheidsrichtlijnen af per succescriteria om een website stap voor stap te beoordelen. Vervolgens kan je aan de hand van de onvoltooide richtlijnen verbeteringen aanbrengen aan de bijbehorende website.
+Werk met deze checklist de toegankelijkheidsrichtlijnen af per succescriteria om een website stap voor stap te beoordelen. Vervolgens kan je aan de hand van de onvoltooide richtlijnen verbeteringen aanbrengen aan de behandelde website.
 
 <!-- ## Bronnen -->
 
