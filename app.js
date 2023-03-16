@@ -1,9 +1,9 @@
 import express, { request } from 'express'
 
 const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principes'
-const data = await fetch(url)
-.then((response) => response.json())
-.catch((error) => error)
+// const data = await fetch(url)
+// .then((response) => response.json())
+// .catch((error) => error)
 
 // Maak een nieuwe express app
 const app = express()
@@ -16,23 +16,23 @@ app.use(express.static('public'))
 
 // Maak een route voor de index
 app.get('/', (request, response) => {
-  // fetchJson(url).then((data) => {
+  fetchJson(url).then((data) => {
     response.render('index', {data: data, active: '/'})
-  // })
+  })
 })
 
 // Route voor het toolboard
 app.get('/toolboard', function (request, response) {
-  // fetchJson(url).then((data) => {
+  fetchJson(url).then((data) => {
   response.render('toolboard', {data: data, active: '/toolboard'})
-  // })
+  })
 })
 
 // Route voor het toolboard
 app.get('/contact', function (request, response) {
-  // fetchJson(url).then((data) => {
+  fetchJson(url).then((data) => {
   response.render('contact', {data: data, active: '/contact'})
-  // })
+  })
 })
 
 
@@ -47,8 +47,8 @@ app.listen(app.get('port'), function () {
  * @param {*} url the api endpoint to address
  * @returns the json response from the api endpoint
  */
-// async function fetchJson(url) {
-//   return await fetch(url)
-//     .then((response) => response.json())
-//     .catch((error) => error)
-// }
+async function fetchJson(url) {
+  return await fetch(url)
+    .then((response) => response.json())
+    .catch((error) => error)
+}
