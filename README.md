@@ -16,7 +16,7 @@ Tool in checklist vorm om website toegankelijker te maken.
 
 ## 🤔 Beschrijving
 Samen met deze toegankelijkheids-tool maakt u eenvouding websites en apps toegankelijker via een checklist, geleidt door de WCAG principes en richtlijnen.
-![image](https://user-images.githubusercontent.com/112861614/224163551-9211776c-cad6-4b1f-9b2f-6dccf351b54e.png)
+![image](https://user-images.githubusercontent.com/112861614/225774291-0bf30b5b-d8e8-4797-a4d1-63d580863663.png)
 Live link gehost via Cyclic: https://puce-sleepy-gecko.cyclic.app/ 
 
 ## 💻 Kenmerken
@@ -27,7 +27,7 @@ Door middel van een nested forEach-loop worden alle richtlijnen per principe uit
 Fork het project en voer eerst `npm install` uit in de terminal om alle nodige packages en dependencies binnen te halen. Vervolgens maakt `npm start` een port vrij om de website te bekijken in de browser.
 
 ## 🙃 Gebruik
-Werk met deze checklist de toegankelijkheidsrichtlijnen af per principe om een website stap voor stap te beoordelen. Vervolgens kan je aan de hand van de onvoltooide richtlijnen verbeteringen aanbrengen aan de bijbehorende website.
+Werk met deze checklist de toegankelijkheidsrichtlijnen af per succescriteria om een website stap voor stap te beoordelen. Vervolgens kan je aan de hand van de onvoltooide richtlijnen verbeteringen aanbrengen aan de behandelde website.
 
 <!-- ## Bronnen -->
 
