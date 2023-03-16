@@ -477,6 +477,8 @@ input:checked+.slider:before {
 
 @media only screen and (max-width: 900px) {
     main {
+        display: flex;
+        flex-direction: column;
         justify-content: flex-start;
         width: 93vw;
         margin: calc(var(--xxlarge-size) + var(--medium-size)) 0;
