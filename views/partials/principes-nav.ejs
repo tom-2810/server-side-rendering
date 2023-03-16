@@ -12,9 +12,16 @@
                     </section>
                 </section>
 
+                <% var total = 0; %>
+                <% principe.richtlijnen.forEach(function(richtlijn) { %>
+                <% total += richtlijn.succescriteria.length; %>
+                <% }) %>
+
                 <section class="principe-progressie">
-                    <progress id="<%= principe.titel.toLowerCase() %>-progressie-balk" value="0" max="<%= principe.richtlijnen.length %>"></progress>
-                    <p><span id="<%= principe.titel.toLowerCase() %>-progressie">0</span> van de <%= principe.richtlijnen.length %></p>
+                    <progress id="<%= principe.titel.toLowerCase() %>-progressie-balk" value="0" max="<%= total %>"></progress>
+                    <p>
+                    <span id="<%= principe.titel.toLowerCase() %>-progressie">0</span> van de <%= total %>  
+                 </p>
                 </section>
             </a>
         </li>
