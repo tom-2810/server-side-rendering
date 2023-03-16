@@ -22,6 +22,19 @@ Live link gehost via Cyclic: https://puce-sleepy-gecko.cyclic.app/
 ## 💻 Kenmerken
 Het Toolboard is tot stand gekomen met ejs en Node.
 Door middel van een nested forEach-loop worden alle richtlijnen per principe uit de [Vervoerregio Amsterdam API](https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principles) gehaald.
+```js
+const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principes'
+```
+Verder is navigatie mogelijk door middel van Express Routing.
+
+Route in app.js
+```js
+app.get('/toolboard', function (request, response) {
+  fetchJson(url).then((data) => {
+  response.render('toolboard', {data: data, active: '/toolboard'})
+  })
+})
+```
 
 ## ⬇️ Installatie
 Fork het project en voer eerst `npm install` uit in de terminal om alle nodige packages en dependencies binnen te halen. Vervolgens maakt `npm start` een port vrij om de website te bekijken in de browser.
